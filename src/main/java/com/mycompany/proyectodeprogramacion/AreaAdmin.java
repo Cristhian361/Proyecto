@@ -1,8 +1,8 @@
 package com.mycompany.proyectodeprogramacion;
-public class app {
 
+public class AreaAdmin {
     public static void main(String[] args) {
-        Sistema.menuCliente();
+        //Sistema.menuAdmi();
+        Administrador.gestionProducto();
     }
-    
 }

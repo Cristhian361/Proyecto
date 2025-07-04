@@ -8,7 +8,7 @@ public class Sistema {
         DatosAdmi = datosAdmi;
         this.formulario = formulario;
     }
-
+    //menu que se le mostrara al cliente
     public static void menuCliente(){
             int opcion ;
              do{ 
@@ -25,14 +25,7 @@ public class Sistema {
                 opcion = lector.nextInt();        
                 switch(opcion){
                     case 1 :
-                            System.out.println("*****************************************************");
-                            System.out.println("*Registro                                           *");
-                            System.out.println("*****************************************************");
-                            System.out.println("*NOMBRE:"                                 +"*") ;
-                            System.out.println("*APELLIDO:"                          +"*") ;
-                            System.out.println("*Edad:                                *");
-                            System.out.println("*Correo: " +  "*");            
-                            System.out.println("*****************************************************");
+                            Cliente.llenadoFormulario();
                          
                             break;
                     case 2 : 
@@ -40,14 +33,13 @@ public class Sistema {
              }while(opcion != 6);
                    
         }
-
-    public void static String menuAdmi() {
+    //Menu para los trabajadores
+    public static void menuAdmi() {
         int opcion;
-        int contraseña = 1252;
-        String nombre = "Miguel";
         do {
             System.out.print("""
-                    [1] Ingresar
+                    [1] Vendedor
+                    [2] Administrador
                     [2] Salir
                     Ingrese una opcion: 
                     """);
@@ -56,31 +48,12 @@ public class Sistema {
 
             switch (opcion) {
                 case 1:
-                    int opcion1;
-                    do {
-                        System.out.print("""
-                         [1] Administrador
-                         [2] Vendedor
-                         Ingrese una opcion: 
-                         """);
-                        switch (opcion1){
-                            case 1:
-                                System.out.println("*****************************************************");
-                                System.out.println("*Registro                                           *");
-                                System.out.println("*****************************************************");
-                                System.out.println("*NOMBRE:"                                 +"*") ;
-                                System.out.println("*APELLIDO:"                          +"*") ;
-                                System.out.println("*Edad:                                *");
-                                System.out.println("*Correo: " +  "*");
-                                System.out.println("*****************************************************");
-                            case 2:
-                        }
-                    }while (opcion1 != 2);
+                    Vendedor.ingresarVendedor();
                     break;
                 case 2:
+                    Administrador.ingresarAdmin();
+                    break;
             }
-
-        } while (opcion != 2);
-
+        } while (opcion != 3);
     }
 }
